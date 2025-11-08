@@ -1,0 +1,56 @@
+# KMS 資料治理系統 - 依賴套件清單
+# Python 3.11+
+
+# ===== 核心文檔處理 =====
+docling>=1.0.0               # IBM Docling - PDF 處理主力
+pypdf>=3.17.0                # PDF 解析備用方案
+pymupdf>=1.23.0              # PyMuPDF - 從 PDF 提取圖片（用於補充 docling）
+unstructured>=0.11.0         # 多格式文檔處理
+python-docx>=1.1.0           # Word 文檔處理
+python-pptx>=0.6.23          # PowerPoint 處理
+
+# ===== LangChain 生態系 =====
+langchain>=0.1.0             # LangChain 核心
+langchain-community>=0.0.13  # LangChain 社群擴展
+langchain-text-splitters>=0.0.1  # LangChain 文本分割器（獨立套件）
+
+# ===== NLP 與文本處理 =====
+spacy>=3.7.0                 # NLP 處理
+textstat>=0.7.3              # 可讀性分析
+sentence-transformers>=2.2.2 # 句子嵌入
+
+# ===== 資料處理與分析 =====
+pandas>=2.1.0                # 數據分析
+numpy>=1.24.0                # 數值計算
+sqlite-utils>=3.35           # SQLite 工具
+
+# ===== 可視化 =====
+plotly>=5.18.0               # 互動式圖表
+matplotlib>=3.8.0            # 基礎繪圖
+seaborn>=0.13.0              # 統計圖表
+
+# ===== Jupyter 環境 =====
+jupyterlab>=4.0.0            # Jupyter Lab
+notebook>=7.0.0              # Jupyter Notebook
+ipywidgets>=8.1.0            # 互動式 widgets
+tqdm>=4.66.0                 # 進度條
+
+# ===== 工具類 =====
+python-dateutil>=2.8.2       # 日期處理
+pyyaml>=6.0.1                # YAML 配置
+requests>=2.31.0             # HTTP 請求
+beautifulsoup4>=4.12.0       # HTML 解析
+lxml>=4.9.0                  # XML 解析
+
+# ===== 品質與測試 =====
+pytest>=7.4.0                # 單元測試
+pytest-cov>=4.1.0            # 測試覆蓋率
+
+# ===== 可選：向量資料庫（用於後續 RAG）=====
+# chromadb>=0.4.18           # ChromaDB 向量資料庫
+# faiss-cpu>=1.7.4           # FAISS 向量搜索
+# pinecone-client>=2.2.0     # Pinecone 雲端向量庫
+
+# ===== 可選：LLM API =====
+# openai>=1.6.0              # OpenAI API
+# anthropic>=0.8.0           # Anthropic Claude API

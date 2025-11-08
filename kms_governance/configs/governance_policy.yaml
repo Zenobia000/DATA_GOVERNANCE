@@ -1,0 +1,229 @@
+# KMS 資料治理政策配置檔
+# 定義治理規則、品質閾值、處理參數
+
+# ===== 系統資訊 =====
+system:
+  name: "KMS Data Governance System"
+  version: "1.0.0"
+  environment: "development"  # development, staging, production
+  description: "企業知識管理系統資料治理"
+
+# ===== 文檔處理配置 =====
+document_processing:
+  # 支援的檔案格式
+  supported_formats:
+    - ".pdf"
+    - ".docx"
+    - ".pptx"
+    - ".md"
+    - ".txt"
+
+  # Docling 配置
+  docling:
+    enable_ocr: true
+    enable_table_structure: true
+    resolution_scale: 2.0
+    timeout_seconds: 300
+
+  # 分塊策略
+  chunking:
+    strategy: "recursive"  # recursive, semantic, fixed
+    chunk_size: 1000
+    chunk_overlap: 200
+    separators: ["\n\n", "\n", "。", ".", " "]
+
+  # 批次處理
+  batch:
+    max_concurrent: 5
+    retry_count: 3
+    delay_between_files: 0.5  # seconds
+
+# ===== 品質控制 =====
+quality_control:
+  # 品質閾值
+  thresholds:
+    minimum_score: 0.70      # 最低接受品質分數
+    target_score: 0.85       # 目標品質分數
+    excellent_score: 0.95    # 優秀品質分數
+
+  # 維度權重（基於 ISO 25012）
+  dimension_weights:
+    accuracy: 0.20           # 準確性
+    completeness: 0.20       # 完整性
+    consistency: 0.10        # 一致性
+    currency: 0.15           # 時效性
+    understandability: 0.15  # 可理解性
+    precision: 0.05          # 精確性
+    traceability: 0.10       # 可追溯性
+    availability: 0.05       # 可用性
+
+  # 自動化檢查
+  automated_checks:
+    - check_file_size       # 檢查檔案大小
+    - check_encoding        # 檢查編碼
+    - check_structure       # 檢查結構
+    - check_metadata        # 檢查元資料
+    - check_content_length  # 檢查內容長度
+
+  # 內容長度要求
+  content_requirements:
+    min_word_count: 100
+    min_char_count: 500
+    max_file_size_mb: 100
+
+# ===== 元資料管理 =====
+metadata:
+  # 必填欄位
+  required_fields:
+    - document_id
+    - filename
+    - title
+    - category
+    - processed_at
+
+  # 推薦欄位
+  recommended_fields:
+    - authors
+    - year
+    - keywords
+    - abstract
+    - language
+
+  # 分類體系
+  categories:
+    model_paradigm:
+      name: "模型的范式變遷"
+      description: "AI 模型架構演進"
+      tags: ["architecture", "model", "paradigm"]
+
+    infrastructure:
+      name: "Infra 與資料的變遷"
+      description: "基礎設施與資料處理"
+      tags: ["infrastructure", "data", "scaling"]
+
+    language_models:
+      name: "語言模型的發展"
+      description: "NLP 與 LLM 演進"
+      tags: ["nlp", "llm", "language"]
+
+    multimodal:
+      name: "多模態模型的發展"
+      description: "跨模態 AI 系統"
+      tags: ["multimodal", "vision", "generation"]
+
+  # 文檔類型
+  document_types:
+    - research_paper
+    - technical_doc
+    - manual
+    - report
+    - policy
+    - general
+
+# ===== 資料安全與合規 =====
+security:
+  # 敏感資訊檢測
+  pii_detection:
+    enabled: true
+    patterns:
+      - email
+      - phone
+      - ssn
+      - credit_card
+
+  # 存取控制
+  access_control:
+    default_level: "internal"  # public, internal, confidential, secret
+    require_authentication: false
+
+  # 審計日誌
+  audit_logging:
+    enabled: true
+    log_level: "INFO"
+    retention_days: 365
+
+# ===== 資料保留政策 =====
+retention:
+  # 預設保留期限（天）
+  default_retention_days: 2555  # 7 years
+
+  # 依文檔類型的保留期限
+  by_document_type:
+    research_paper: 3650    # 10 years
+    technical_doc: 1825     # 5 years
+    manual: 1095            # 3 years
+    report: 2555            # 7 years
+    policy: 3650            # 10 years
+
+  # 歸檔策略
+  archiving:
+    auto_archive_after_days: 365
+    compression_enabled: true
+
+# ===== 血緣追蹤 =====
+lineage:
+  # 啟用血緣追蹤
+  enabled: true
+
+  # 追蹤層級
+  tracking_levels:
+    - file_level           # 檔案層級
+    - chunk_level          # 分塊層級
+    - transformation_level # 轉換層級
+
+  # 版本控制
+  versioning:
+    enabled: true
+    auto_version: true
+    version_format: "v{major}.{minor}.{patch}"
+
+# ===== 效能監控 =====
+monitoring:
+  # 啟用監控
+  enabled: true
+
+  # 監控指標
+  metrics:
+    - processing_time
+    - success_rate
+    - error_rate
+    - quality_score
+    - throughput
+
+  # 告警閾值
+  alerts:
+    processing_time_threshold_seconds: 60
+    error_rate_threshold_percent: 10
+    quality_score_threshold: 0.70
+
+# ===== 整合設定 =====
+integrations:
+  # 向量資料庫（用於後續 RAG）
+  vector_database:
+    provider: "chromadb"  # chromadb, pinecone, faiss
+    collection_name: "kms_documents"
+
+  # LLM Provider（可選）
+  llm:
+    provider: null  # openai, anthropic, local
+    model: null
+    api_key_env: "OPENAI_API_KEY"
+
+# ===== 其他設定 =====
+misc:
+  # 語言設定
+  default_language: "en"
+  supported_languages:
+    - "en"
+    - "zh"
+
+  # 時區
+  timezone: "Asia/Taipei"
+
+  # Debug 模式
+  debug_mode: true
+
+  # 快取設定
+  cache:
+    enabled: true
+    ttl_seconds: 3600
