@@ -1,0 +1,45 @@
+
+Research Proposal: Quantum Computing Applications in Cryptography
+
+Principal Investigator: Dr. Elena Rodriguez
+Co-Investigators: Prof. James Chen, Dr. Sarah Kim
+Institution: University of Technology
+Funding Agency: National Science Foundation
+Requested Amount: $2,500,000
+Project Duration: 3 years
+
+Abstract
+This research proposes to investigate the potential applications of quantum computing in modern cryptographic systems. As quantum computers become more powerful, traditional encryption methods face unprecedented challenges. Our research aims to develop quantum-resistant cryptographic algorithms and explore new quantum cryptographic protocols.
+
+1. Background and Significance
+The advent of quantum computing presents both opportunities and threats to cybersecurity. While quantum computers could break existing encryption methods, they also enable new forms of quantum cryptography that offer theoretically unbreakable security.
+
+Current RSA and elliptic curve cryptographic systems rely on the computational difficulty of factoring large integers. Shor's algorithm, when implemented on a sufficiently powerful quantum computer, could solve these problems exponentially faster than classical computers.
+
+2. Research Objectives
+2.1 Develop post-quantum cryptographic algorithms resistant to quantum attacks
+2.2 Investigate quantum key distribution protocols for secure communication
+2.3 Analyze the security implications of hybrid classical-quantum systems
+2.4 Create a framework for transitioning from classical to quantum-safe cryptography
+
+3. Methodology
+We will employ both theoretical analysis and experimental validation using quantum simulators. Our approach includes:
+- Mathematical analysis of quantum algorithms
+- Security proofs for proposed protocols
+- Implementation and testing on quantum hardware simulators
+- Performance comparison with classical methods
+
+4. Expected Outcomes
+- 3-5 peer-reviewed publications in top-tier journals
+- Development of practical quantum-resistant algorithms
+- Training of 4 graduate students and 2 postdoctoral researchers
+- Open-source software library for quantum cryptographic protocols
+
+5. Budget Justification
+Year 1: $900,000 (personnel: $600,000, equipment: $200,000, travel: $50,000, indirect: $50,000)
+Year 2: $850,000 (personnel: $650,000, supplies: $100,000, travel: $50,000, indirect: $50,000)
+Year 3: $750,000 (personnel: $600,000, publication: $50,000, travel: $50,000, indirect: $50,000)
+
+References
+[1] Shor, P. W. (1994). "Algorithms for quantum computation." Proc. 35th Annual Symposium on Foundations of Computer Science.
+[2] Bennett, C. H., & Brassard, G. (1984). "Quantum cryptography." IEEE International Conference on Computers, Systems and Signal Processing.

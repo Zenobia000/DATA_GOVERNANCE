@@ -1,0 +1,22 @@
+
+BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+Abstract
+We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.
+
+1. Introduction
+Language model pre-training has been shown to be effective for improving many natural language processing tasks. These include sentence-level tasks such as natural language inference and paraphrasing, which aim to predict the relationships between sentences by analyzing them holistically.
+
+There are two existing strategies for applying pre-trained language representations to downstream tasks: feature-based and fine-tuning. The feature-based approach uses task-specific architectures that include the pre-trained representations as additional features.
+
+2. Related Work
+There has been a long history of pre-training general language representations, and we briefly review the most widely-used approaches in this section.
+
+2.1 Unsupervised Feature-based Approaches
+Learning widely applicable representations of words has been an active area of research for decades, including non-neural and neural methods.
+
+2.2 Unsupervised Fine-tuning Approaches
+As with the feature-based approaches, the first works in this direction only pre-trained word embedding parameters from unlabeled text.
+
+3. BERT
+We introduce BERT and its detailed implementation in this section. There are two steps in our framework: pre-training and fine-tuning.

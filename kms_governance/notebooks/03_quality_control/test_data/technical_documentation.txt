@@ -1,0 +1,57 @@
+
+API Documentation - User Authentication Service v2.1
+
+Overview
+The User Authentication Service provides secure authentication and authorization capabilities for applications. This service implements OAuth 2.0 and JWT token standards with enterprise-grade security features.
+
+Authentication Endpoints
+
+POST /auth/login
+Description: Authenticates a user with email/password credentials
+Parameters:
+- email (string, required): User's email address
+- password (string, required): User's password
+- remember_me (boolean, optional): Extended session duration
+
+Response:
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIs...",
+  "refresh_token": "dGhpcyBpcyBhIHJlZnJlc2g...",
+  "expires_in": 3600,
+  "user_id": "12345"
+}
+
+Error Codes:
+- 400: Invalid credentials
+- 401: Account locked
+- 429: Rate limit exceeded
+
+POST /auth/refresh
+Description: Refreshes an expired access token using a valid refresh token
+Headers:
+- Authorization: Bearer {refresh_token}
+
+Security Considerations
+- All endpoints require HTTPS in production
+- Rate limiting: 5 requests per minute per IP
+- Token lifetime: 1 hour (access), 30 days (refresh)
+- Failed login attempts are logged for security monitoring
+
+Implementation Example
+```python
+import requests
+
+response = requests.post('https://api.example.com/auth/login', {
+    'email': 'user@example.com',
+    'password': 'secure_password123'
+})
+
+if response.status_code == 200:
+    tokens = response.json()
+    access_token = tokens['access_token']
+```
+
+Version History
+- v2.1 (2024-01-15): Added refresh token rotation
+- v2.0 (2023-12-01): OAuth 2.0 compliance updates
+- v1.5 (2023-10-15): Enhanced security features

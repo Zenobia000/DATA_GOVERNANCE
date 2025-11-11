@@ -1,0 +1,98 @@
+
+SmartHome Controller User Manual
+
+Model: SH-2024-Pro
+Version: 3.2.1
+Publication Date: March 2024
+
+Table of Contents
+1. Getting Started
+2. Initial Setup
+3. Device Configuration
+4. Advanced Features
+5. Troubleshooting
+6. Technical Specifications
+
+Chapter 1: Getting Started
+
+Welcome to your new SmartHome Controller! This device allows you to control and monitor all connected smart devices in your home from a single interface.
+
+What's in the Box:
+- SmartHome Controller unit
+- Power adapter (12V, 2A)
+- Ethernet cable
+- Quick start guide
+- Warranty information
+
+Safety Precautions:
+- Do not expose the device to moisture or extreme temperatures
+- Use only the provided power adapter
+- Keep the device away from direct sunlight
+- Ensure proper ventilation around the device
+
+Chapter 2: Initial Setup
+
+Step 1: Physical Installation
+1. Choose a central location in your home for optimal wireless coverage
+2. Connect the power adapter to the device and plug into a wall outlet
+3. Connect the Ethernet cable to your router (optional but recommended)
+4. Wait for the LED indicator to turn solid green (approximately 2 minutes)
+
+Step 2: Network Configuration
+1. Download the SmartHome app from the App Store or Google Play
+2. Create a new account or sign in to your existing account
+3. Tap "Add Device" and select "SmartHome Controller"
+4. Follow the on-screen instructions to connect to your Wi-Fi network
+
+Chapter 3: Device Configuration
+
+Adding Smart Devices:
+The controller supports over 200 different smart device types including:
+- Smart lights and switches
+- Thermostats and climate controls
+- Security cameras and sensors
+- Smart locks and garage door openers
+- Entertainment systems
+
+To add a device:
+1. Open the SmartHome app
+2. Tap the "+" button in the top right corner
+3. Select the device type from the list
+4. Follow the specific pairing instructions for your device
+
+Chapter 4: Advanced Features
+
+Scene Creation:
+Create custom scenes to control multiple devices with a single command.
+
+Automation Rules:
+Set up rules to trigger actions based on time, device status, or sensor readings.
+
+Voice Control:
+Compatible with Amazon Alexa, Google Assistant, and Apple HomeKit.
+
+Chapter 5: Troubleshooting
+
+Common Issues:
+Q: Device won't connect to Wi-Fi
+A: Ensure you're using a 2.4GHz network and the password is correct
+
+Q: Smart devices not responding
+A: Check if the devices have power and are within range of the controller
+
+Q: App crashes or freezes
+A: Force close the app and restart it. If the problem persists, reinstall the app.
+
+Technical Support:
+Email: support@smarthome.com
+Phone: 1-800-SMART-HOME (1-800-762-7846)
+Hours: Monday-Friday, 8 AM - 8 PM EST
+
+Chapter 6: Technical Specifications
+
+- Processor: ARM Cortex-A53 Quad-core 1.4GHz
+- Memory: 2GB RAM, 16GB storage
+- Connectivity: Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 5.0, Zigbee 3.0, Z-Wave Plus
+- Operating Temperature: 32°F to 95°F (0°C to 35°C)
+- Dimensions: 6" x 4" x 1.5" (152mm x 102mm x 38mm)
+- Power Consumption: 12W maximum

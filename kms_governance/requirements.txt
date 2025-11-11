@@ -21,7 +21,7 @@ sentence-transformers>=2.2.2 # 句子嵌入
 
 # ===== 資料處理與分析 =====
 pandas>=2.1.0                # 數據分析
-numpy>=1.24.0                # 數值計算
+numpy>=1.24,<2.0             # 數值計算（暫避 NumPy 2.x 相容性問題）
 sqlite-utils>=3.35           # SQLite 工具
 
 # ===== 可視化 =====
@@ -47,10 +47,12 @@ pytest>=7.4.0                # 單元測試
 pytest-cov>=4.1.0            # 測試覆蓋率
 
 # ===== 可選：向量資料庫（用於後續 RAG）=====
-# chromadb>=0.4.18           # ChromaDB 向量資料庫
+chromadb>=0.4.18           # ChromaDB 向量資料庫
 # faiss-cpu>=1.7.4           # FAISS 向量搜索
 # pinecone-client>=2.2.0     # Pinecone 雲端向量庫
 
 # ===== 可選：LLM API =====
 # openai>=1.6.0              # OpenAI API
 # anthropic>=0.8.0           # Anthropic Claude API
+
+urllib3>=2.0.0

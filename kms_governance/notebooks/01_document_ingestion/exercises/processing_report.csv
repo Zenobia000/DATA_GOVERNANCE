@@ -1,0 +1,4 @@
+文件名,文檔類型,檔案大小(KB),分塊數量,品質分數,處理狀態
+transformer_paper_sample.txt,paper,1.41,2,0.69,completed
+bert_paper_sample.txt,paper,0.73,1,0.731,completed
+gpt3_paper_sample.txt,paper,0.57,1,0.735,completed
