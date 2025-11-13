@@ -42,11 +42,12 @@ jupyter lab notebooks/04_end_to_end_demo.ipynb
 
 ```python
 from pathlib import Path
-from utils.document_processor import DocumentProcessor
+# 使用筆記本中的整合處理器
+# 參考 notebooks/01_document_ingestion/01_document_processing_fundamentals.ipynb
 
 # 初始化處理器
-processor = DocumentProcessor(config={
-    'quality_threshold': 0.75,
+processor = EnterpriseDocumentProcessor(config={
+    'min_quality_threshold': 0.75,
     'chunk_size': 1000
 })
 
@@ -107,11 +108,8 @@ kms_governance/
 
 ```python
 from pathlib import Path
-from utils.document_processor import (
-    DocumentProcessor,
-    scan_directory,
-    results_to_dataframe
-)
+# 使用筆記本中的整合處理器和批次處理器
+# 參考 notebooks/01_document_ingestion/01_document_processing_fundamentals.ipynb
 
 # 掃描目錄
 papers_dir = Path("../../papers/01_model_paradigm")

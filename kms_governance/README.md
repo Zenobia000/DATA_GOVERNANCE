@@ -102,11 +102,7 @@ kms_governance/
 │   ├── changelog/               # 變更日誌
 │   └── audit/                   # 審計記錄
 │
-├── utils/                       # 工具模組
-│   ├── document_processor.py   # 文檔處理器
-│   ├── metadata_extractor.py   # 元數據提取器
-│   ├── quality_assessor.py     # 品質評估器
-│   └── lineage_tracker.py      # 血緣追蹤器
+# 工具模組已整合到各筆記本中
 │
 ├── notebooks/                   # Jupyter Notebooks
 │   ├── 00_architecture_overview.ipynb
@@ -239,10 +235,11 @@ jupyter lab notebooks/04_end_to_end_demo.ipynb
 ### 3. 批次處理
 
 ```python
-from utils.document_processor import DocumentProcessor
+# 使用筆記本中的整合處理器
+# 參考 notebooks/01_document_ingestion/01_document_processing_fundamentals.ipynb
 
-processor = DocumentProcessor(config_path="configs/governance_policy.yaml")
-processor.process_directory("01_raw/papers")
+processor = EnterpriseDocumentProcessor(config)
+results = processor.process_directory("01_raw/papers")
 ```
 
 ---
